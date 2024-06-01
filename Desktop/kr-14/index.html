@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWorks - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="header container">
+    <a href="" class="header__logo">
+        <img alt="Logo" class="header__logo-img" src="images/logo.png" >
+    </a>
+</header>
+<main class="main container">
+    <section class="main__info">
+        <h1 class="main__info-title" id="main__title">Get your free account</h1>
+        <p class="main__info-text">Try homeWorks BUSINESS free for 15 days. Downgrade to Basic (Free Forever) anytime.</p>
+        <form class="main__form" id="main-form">
+            <label for="name" class="main__form-label">Full name</label>
+            <input type="text" id="name" name="name" class="main__form-input">
+            <label for="uname" class="main__form-label">Username</label>
+            <input type="text" id="uname" name="uname" class="main__form-input">
+            <label for="email" class="main__form-label">E-mail</label>
+            <input type="text" id="email" name="email" class="main__form-input">
+            <label for="pass" class="main__form-label">Password</label>
+            <input type="password" id="pass" name="pass" class="main__form-input">
+            <label for="repass" class="main__form-label">Repeat Password</label>
+            <input type="password" id="repass" name="repass" class="main__form-input">
+        </form>
+        <div class="main__agree" id="main__agree">
+            <input type="checkbox" id="agree" name="agree">
+            <label for="agree"> Agree to our Terms of Service and Privacy Statement</label>
+        </div>
+        <div class="main__action">
+            <button type="button" class="main__btn" id="sign-up">Sign Up</button>
+            <a href="#" class="main__link" id="login">Already have an account?</a>
+        </div>
+    </section>
+
+    <div class="main__img">
+        <img src="images/image.png" alt="Main Picture">
+    </div>
+</main>
+
+<div id="popup" class="popup">
+    <p id="popup__text" class="popup__text">A link has been sent to your email, click on it to complete the registration.</p>
+    <button id="popup__btn">OK</button>
+</div>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>
