@@ -130,7 +130,7 @@
             const lastName = url.searchParams.get('lastName');
             const email = url.searchParams.get('email');
 
-            // Extract chosenAnswerIds from results and join them into a comma-separated string
+            
             const chosenAnswerIds = this.userResult.map(result => result.chosenAnswerId).join(',');
 
             const xhr = new XMLHttpRequest();
