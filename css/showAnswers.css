@@ -1,0 +1,84 @@
+.show-answers{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.show-path {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.path-grey{
+    color: #DCDCF3;
+}
+
+.made-by {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.made-by span {
+    color: #6933DC;
+}
+
+.question-title{
+    font-family: "Museo Sans Cyrl Bold", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    margin-top: 60px;
+}
+
+.question-title span {
+    color: #6933DC;
+}
+
+.test-question-options {
+    margin-top: 40px;
+}
+
+.test-question-option {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.test-question-option label {
+    cursor: pointer;
+}
+
+.correct {
+    color: #5FDC33;;
+}
+
+.incorrect {
+    color: #DC3333;
+}
+
+.back-results{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+
+.back-results a {
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.back-results a:hover{
+    text-decoration: underline;
+}
+
+.back-results a img{
+    margin-left: 13px;
+    display: inline;
+}
