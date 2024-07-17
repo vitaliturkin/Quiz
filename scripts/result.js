@@ -41,7 +41,13 @@
                     location.href = 'index.html';
                 }
                 if (result) {
-                    location.href = `showAnswers.html?id=${id}&score=${score}&total=${total}&answers=${chosenAnswerIds}`;
+                    location.href = 'showAnswers.html?id=' + id +
+                        '&score=' + result.score +
+                        '&total=' + result.total +
+                        '&answers=' + chosenAnswerIds +
+                        '&name=' + name +
+                        '&lastName=' + lastName +
+                        '&email=' + email;
                 }
             } else {
                 location.href = 'index.html';
