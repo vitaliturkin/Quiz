@@ -29,6 +29,10 @@
                 try {
                     this.quiz = JSON.parse(xhr.responseText);
                     document.getElementById('pre-title').innerText = this.quiz.name;
+                    const name = url.searchParams.get('name');
+                    const lastName = url.searchParams.get('lastName');
+                    const email = url.searchParams.get('email');
+                    document.getElementById('made-by').innerHTML = 'Тест выполнил <span>' + name + ' ' + lastName + ', ' + email + '</span>';
                 } catch (e) {
                     location.href = 'index.html';
                 }
@@ -80,13 +84,10 @@
 
                 question.answers.forEach(answer => {
                     const optionElement = document.createElement('div');
-                    optionElement.classList.add('test-question-option');
-                    optionElement.innerText = answer.answer;
-
-                    /*
+                    optionElement.className = 'question-option';
                     const inputId = 'answer-' + answer.id;
                     const inputElement = document.createElement('input');
-                    inputElement.className = 'option-answer';
+                    inputElement.className = 'test-question-option';
                     inputElement.setAttribute('id', inputId);
                     inputElement.setAttribute('type', 'radio');
                     inputElement.setAttribute('name', 'answer');
@@ -100,7 +101,6 @@
 
                     optionElement.appendChild(inputElement);
                     optionElement.appendChild(labelElement);
-                    */
 
                     const isChosen = this.chosenAnswerIds.includes(answer.id);
                     const isCorrect = this.correctAnswerIds.includes(answer.id);
@@ -110,10 +110,10 @@
                     }
                     if (isChosen && isCorrect) {
                         optionElement.classList.add('correct');
+                        inputElement.classList.add('correct');
                     } else if (isChosen && !isCorrect) {
                         optionElement.classList.add('incorrect');
-                    } else {
-                        console.log("Что-то пошло не так!")
+                        inputElement.classList.add('incorrect');
                     }
 
                     optionsElement.appendChild(optionElement);
@@ -122,40 +122,27 @@
                 questionsContainer.appendChild(questionElement);
             });
         },
-
         goBack() {
             const url = new URL(location.href);
             const id = url.searchParams.get('id');
             const name = url.searchParams.get('name');
             const lastName = url.searchParams.get('lastName');
             const email = url.searchParams.get('email');
+            const score = url.searchParams.get('score');
+            const total = url.searchParams.get('total');
+            const chosenAnswerIds = url.searchParams.get('answers');
 
-            // Extract chosenAnswerIds from results and join them into a comma-separated string
-            const chosenAnswerIds = this.userResult.map(result => result.chosenAnswerId).join(',');
-
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://testologia.ru/pass-quiz?id=' + id, false);
-            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-            xhr.send(JSON.stringify({
-                name: name,
-                lastName: lastName,
-                email: email,
-                results: this.userResult
-            }));
-            if (xhr.status === 200 && xhr.responseText) {
-                let result = null;
-                try {
-                    result = JSON.parse(xhr.responseText);
-                } catch (e) {
-                    location.href = 'index.html';
+                if (id && score && total) {
+                    location.href = 'result.html?id=' + id +
+                        '&score=' + score +
+                        '&total=' + total +
+                        '&answers=' + chosenAnswerIds +
+                        '&name=' + name +
+                        '&lastName=' + lastName +
+                        '&email=' + email;
                 }
-                if (result) {
-                    location.href = 'result.html?id=' + id + '&score=' + result.score + '&total=' + result.total + '&answers=' + chosenAnswerIds;
-                }
-            } else {
-                location.href = 'index.html';
-            }
         }
+
     };
 
     ShowAnswers.init();
