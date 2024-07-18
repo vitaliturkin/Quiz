@@ -5,13 +5,23 @@
         correctAnswerIds: [],
 
         init() {
+            const urlP = new URLSearchParams(location.search);
+            const score = urlP.get('score');
+            const total = urlP.get('total');
+            const id = urlP.get('id');
+            const name = urlP.get('name');
+            const lastName = urlP.get('lastName');
+            const email = urlP.get('email');
+            const chosenAnswerIds = urlP.get('answers');
+
             this.loadQuiz();
             this.loadCorrectAnswers();
             this.showResults();
 
+            document.getElementById('made-by').innerHTML = 'Тест выполнил <span>' + name + ' ' + lastName + ', ' + email + '</span>';
             this.showAnswersButtonElement = document.getElementById('show');
             this.showAnswersButtonElement.onclick = () => {
-                this.goBack();
+                location.href = `result.html?id=${id}&score=${score}&total=${total}&answers=${chosenAnswerIds}&name=${name}&lastName=${lastName}&email=${email}`;
             };
         },
 
@@ -29,10 +39,6 @@
                 try {
                     this.quiz = JSON.parse(xhr.responseText);
                     document.getElementById('pre-title').innerText = this.quiz.name;
-                    const name = url.searchParams.get('name');
-                    const lastName = url.searchParams.get('lastName');
-                    const email = url.searchParams.get('email');
-                    document.getElementById('made-by').innerHTML = 'Тест выполнил <span>' + name + ' ' + lastName + ', ' + email + '</span>';
                 } catch (e) {
                     location.href = 'index.html';
                 }
@@ -122,27 +128,6 @@
                 questionsContainer.appendChild(questionElement);
             });
         },
-        goBack() {
-            const url = new URL(location.href);
-            const id = url.searchParams.get('id');
-            const name = url.searchParams.get('name');
-            const lastName = url.searchParams.get('lastName');
-            const email = url.searchParams.get('email');
-            const score = url.searchParams.get('score');
-            const total = url.searchParams.get('total');
-            const chosenAnswerIds = url.searchParams.get('answers');
-
-                if (id && score && total) {
-                    location.href = 'result.html?id=' + id +
-                        '&score=' + score +
-                        '&total=' + total +
-                        '&answers=' + chosenAnswerIds +
-                        '&name=' + name +
-                        '&lastName=' + lastName +
-                        '&email=' + email;
-                }
-        }
-
     };
 
     ShowAnswers.init();

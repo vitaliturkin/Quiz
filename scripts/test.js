@@ -117,10 +117,12 @@
             });
             if (chosenOption && chosenOption.chosenAnswerId) {
                 this.nextButtonElement.removeAttribute('disabled');
-                this.passButtonElement.setAttribute('disabled', 'disabled');
+                this.passButtonElement.classList.add('no-pointer');
+                this.passButtonElement.onclick = null;
             } else {
                 this.nextButtonElement.setAttribute('disabled', 'disabled');
-                this.passButtonElement.removeAttribute('disabled');
+                this.passButtonElement.classList.remove('no-pointer');
+                this.passButtonElement.onclick = this.move.bind(this, 'pass');
             }
             if (this.currentQuestionIndex === this.quiz.questions.length) {
                 this.nextButtonElement.innerText = 'Завершить';
@@ -136,6 +138,8 @@
         },
         chooseAnswer() {
             this.nextButtonElement.removeAttribute('disabled');
+            this.passButtonElement.classList.add('no-pointer');
+            this.passButtonElement.onclick = null;
         },
         move(action) {
             const activeQuestion = this.quiz.questions[this.currentQuestionIndex - 1];

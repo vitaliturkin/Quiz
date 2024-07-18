@@ -92,6 +92,17 @@ font-size: 17px;
     margin-left: 13px;
 }
 
+.pass-question a.no-pointer{
+    cursor: none;
+    color: #e2dfe7;
+}
+
+.pass-question a:hover.no-pointer{
+    cursor: none;
+    color: #e2dfe7;
+    text-decoration: none;
+}
+
 input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
