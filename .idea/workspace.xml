@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73fefe55-90be-4977-9283-724b0dd54878" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/showAnswers.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/showAnswers.js" afterDir="false" />
-    </list>
+    <list default="true" id="73fefe55-90be-4977-9283-724b0dd54878" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,16 +42,25 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "finalVersion",
-    "last_opened_file_path": "C:/Users/vital.LAPTOP-K1U1E8JC/Desktop/kr-16",
+    "last_opened_file_path": "C:/Users/vital.LAPTOP-K1U1E8JC/Desktop/kr-17",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ItLogia Course\kr-16\static" />
+      <recent name="D:\ItLogia Course\kr-16" />
+      <recent name="D:\ItLogia Course\kr-16\templates" />
+      <recent name="D:\ItLogia Course\kr-16\src\components" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +77,9 @@
       <workItem from="1721110318581" duration="5673000" />
       <workItem from="1721210251514" duration="5989000" />
       <workItem from="1721216505616" duration="124000" />
-      <workItem from="1721292841977" duration="6289000" />
+      <workItem from="1721292841977" duration="6947000" />
+      <workItem from="1721820005556" duration="4755000" />
+      <workItem from="1721850620000" duration="63000" />
     </task>
     <servers />
   </component>
