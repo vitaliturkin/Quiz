@@ -1,2 +1,2 @@
-"# ItLogia_KR8" 
-"# assessment08-VT" 
+"# ItLogia_KR18" 
+"# assessment18-VT" 
