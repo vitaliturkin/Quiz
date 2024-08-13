@@ -1,0 +1,103 @@
+.show-answers{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.show-path {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.path-grey{
+    color: #DCDCF3;
+}
+
+.made-by {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.made-by span {
+    color: #6933DC;
+}
+
+.question-title{
+    font-family: "Museo Sans Cyrl Bold", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    margin-top: 60px;
+}
+
+.question-title span {
+    color: #6933DC;
+}
+
+.test-question-options {
+    margin-top: 40px;
+}
+
+.question-option {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.test-question-option {
+}
+
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #6933DC;
+    border-radius: 50%;
+    margin: 0 13px 0 0;
+
+    display: grid;
+    place-content: center;
+}
+
+.question-option.correct {
+    color: #5FDC33;;
+}
+
+.question-option.incorrect {
+    color: #DC3333;
+}
+
+input[type="radio"].correct {
+    border: 6px solid #5FDC33;
+}
+
+input[type="radio"].incorrect {
+    border: 6px solid #DC3333;
+}
+
+.back-results{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+
+.back-results a {
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.back-results a:hover{
+    text-decoration: underline;
+}
+
+.back-results a img{
+    margin-left: 13px;
+    display: inline;
+}
