@@ -16,7 +16,7 @@ export class ShowAnswers {
 
         this.showAnswersButtonElement = document.getElementById('show');
         this.showAnswersButtonElement.onclick = () => {
-            this.backToResults()
+            location.href = '#/result?id=' + this.routeParams.id;
         };
     }
 
@@ -83,17 +83,13 @@ export class ShowAnswers {
                 optionElement.appendChild(inputElement);
                 optionElement.appendChild(labelElement);
 
-                const correctAnswer = question.answers.find(answer => answer.correct === true);
-                const isCorrect = answer === correctAnswer;
 
-                const inCorrectAnswer = question.answers.find(answer => answer.correct === false);
-                const isInCorrect = answer === inCorrectAnswer;
-
-                if (isCorrect) {
-                    optionElement.classList.add('correct');
-                }
-                if (isInCorrect) {
-                    optionElement.classList.add('incorrect');
+                if(answer.hasOwnProperty('correct')){
+                    if(answer.correct) {
+                        optionElement.classList.add('correct');
+                    } else {
+                        optionElement.classList.add('incorrect');
+                    }
                 }
 
                 optionsElement.appendChild(optionElement);
@@ -102,27 +98,5 @@ export class ShowAnswers {
             questionElement.appendChild(optionsElement);
             questionsContainer.appendChild(questionElement);
         });
-    }
-
-    async backToResults() {
-        const userInfo = Auth.getUserInfo();
-        if (!userInfo) {
-            location.href = '#/';
-        }
-
-        if (this.routeParams.id) {
-            try {
-                const result = await CustomHttp.request(config.host + '/tests/' + this.routeParams.id + '/result?userId=' + userInfo.userId);
-
-                if (result) {
-                    if (result.error) {
-                        throw new Error(result.error);
-                    }
-                    location.href = '#/result?id=' + this.routeParams.id;
-                }
-            } catch (error) {
-                console.log(error)
-            }
-        }
     }
 }

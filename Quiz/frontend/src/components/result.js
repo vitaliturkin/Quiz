@@ -10,7 +10,7 @@ export class Result {
 
         this.showAnswersButtonElement = document.getElementById('show');
         this.showAnswersButtonElement.onclick = () => {
-            this.showAnswers();
+            location.href = '#/showAnswers?id=' + this.routeParams.id;
         };
 
     }
@@ -34,27 +34,6 @@ export class Result {
             } catch (error) {
                 console.log(error)
             }
-        }
-    }
-
-    async showAnswers() {
-        const userInfo = Auth.getUserInfo();
-        if (!userInfo) {
-            location.href = '/#/';
-        }
-
-        try {
-            const result = await CustomHttp.request(config.host + '/tests/' + this.routeParams.id + '/result/details?userId=' + userInfo.userId);
-
-            if (result) {
-                if (result.error) {
-                    throw new Error(result.error);
-                }
-
-                location.href = '#/showAnswers?id=' + this.routeParams.id;
-            }
-        } catch (error) {
-            console.log(error)
         }
     }
 }
