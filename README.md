@@ -1,2 +1,2 @@
-"# ItLogia_KR18" 
-"# assessment18-VT" 
+"ItLogia_KR18" 
+"assessment 18 made by VT" 
